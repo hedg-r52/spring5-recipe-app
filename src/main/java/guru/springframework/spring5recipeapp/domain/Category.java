@@ -20,6 +20,7 @@ public class Category {
 
     @ManyToMany(mappedBy = "categories")
     private Set<Recipe> recipes;
+    private String description;
 
     public Long getId() {
         return id;
