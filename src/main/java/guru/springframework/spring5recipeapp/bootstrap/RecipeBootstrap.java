@@ -1,11 +1,6 @@
 package guru.springframework.spring5recipeapp.bootstrap;
 
-import guru.springframework.spring5recipeapp.domain.Category;
-import guru.springframework.spring5recipeapp.domain.Difficulty;
-import guru.springframework.spring5recipeapp.domain.Ingredient;
-import guru.springframework.spring5recipeapp.domain.Notes;
-import guru.springframework.spring5recipeapp.domain.Recipe;
-import guru.springframework.spring5recipeapp.domain.UnitOfMeasure;
+import guru.springframework.spring5recipeapp.domain.*;
 import guru.springframework.spring5recipeapp.repositories.CategoryRepository;
 import guru.springframework.spring5recipeapp.repositories.RecipeRepository;
 import guru.springframework.spring5recipeapp.repositories.UnitOfMeasureRepository;
@@ -112,6 +107,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecipe.setDescription("Perfect Guacamole");
         guacRecipe.setPrepTime(10);
         guacRecipe.setCookTime(0);
+        guacRecipe.setSource("Simply Recipes");
         guacRecipe.setDifficulty(Difficulty.EASY);
         guacRecipe.setDirections("1 Cut avocado, remove flesh: Cut the avocados in half. Remove seed. Score the inside of the avocado with a blunt knife and scoop out the flesh with a spoon" +
                 "\n" +
@@ -150,6 +146,9 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
+
+        guacRecipe.setServings(4);
+        guacRecipe.setUrl("http://www.simplyrecipes.com/recipes/perfect_guacamole/");
 
         //add to return list
         recipes.add(guacRecipe);
