@@ -25,6 +25,7 @@ import static org.mockito.Mockito.*;
 class RecipeServiceImplTest {
 
     private static final Long ID_VALUE = 1L;
+    private static final Long ID_TO_DELETE = 2L;
     private static final String DESCRIPTION = "description";
 
     RecipeServiceImpl recipeService;
@@ -111,6 +112,12 @@ class RecipeServiceImplTest {
         verify(recipeCommandToRecipe).convert(any());
         verify(recipeRepository).save(any());
 
+    }
+
+    @Test
+    public void testDeleteById() throws Exception {
+        recipeService.deleteById(ID_TO_DELETE);
+        verify(recipeRepository).deleteById(anyLong());
     }
 
 }
