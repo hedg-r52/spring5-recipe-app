@@ -1,7 +1,8 @@
 package guru.springframework.spring5recipeapp.domain;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -11,7 +12,8 @@ import java.util.Set;
  * Created by Andrei Soloviev (hedg.r52@gmail.com).
  * date: 16.11.2021
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(exclude = {"notes", "categories", "ingredients"})
 @Entity
 public class Recipe {

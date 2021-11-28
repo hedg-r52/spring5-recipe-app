@@ -1,20 +1,18 @@
 package guru.springframework.spring5recipeapp.domain;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Set;
 
 /**
  * Created by Andrei Soloviev (hedg.r52@gmail.com).
  * date: 16.11.2021
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(exclude = "recipes")
 @Entity
 public class Category {
