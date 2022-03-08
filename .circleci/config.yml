@@ -23,7 +23,7 @@ jobs:
           name: Build
           command: mvn -B -DskipTests clean package
       # Then run your tests!
-      - run: mvn integration-test cobertura:cobertura
+      - run: mvn integration-test jacoco:report
       - store_test_results:
           path: target/surefire-reports
       - run:
